@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import Formulario from './components/Formulario';
+import Citas from './components/Citas';
 
 function App() {
   // State para la base de datos de citas
@@ -23,7 +24,14 @@ function App() {
           />
         </div>
         <div className="one-half column">
-          si muy pinxe gallo
+          {
+            citas.map(cita => (
+              <Citas
+                key={cita.id} 
+                cita={cita}
+              />
+            ))
+          }
         </div>
       </div>
     </div>  
