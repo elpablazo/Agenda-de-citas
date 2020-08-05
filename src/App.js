@@ -22,7 +22,7 @@ function App() {
       // Si no hay, guarda un array vacío
       localStorage.setItem('citas', JSON.stringify([]));
     }
-  }, [citas]);
+  }, [citas, citasIniciales]);
 
   // Función que toma las citas
   const crearCita = cita => {
@@ -49,7 +49,7 @@ function App() {
         </div>
         <div className="one-half column">
           <h1>Citas actuales</h1>
-          {citas.length == 0 ? <h1>No hay citas actualmente.</h1>
+          {citas.length === 0 ? <h1>No hay citas actualmente.</h1>
           : citas.map(cita => (
             <Citas
               key={cita.id} 

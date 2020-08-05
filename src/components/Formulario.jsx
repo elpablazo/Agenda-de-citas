@@ -4,11 +4,11 @@ import { v4 as uuidv4 } from "uuid";
 const Formulario = ({crearCita}) => {
   // State para el formulario de citas con sus valores de los forms inicializados vacíos
   const [cita, setCita] = useState({
-    mascota: "A",
-    dueño: "A",
-    fecha: "2020-08-05",
-    hora: "02:02",
-    sintomas: "KK",
+    mascota: "",
+    dueño: "",
+    fecha: "",
+    hora: "",
+    sintomas: "",
   });
 
   // State para los errores en los campos del formulario
@@ -49,11 +49,11 @@ const Formulario = ({crearCita}) => {
     crearCita(cita);
     // Vaciamos el formulario para que esté limpio de nuevo
     setCita({
-      mascota: 'EL cofi y la kelly',
-      dueño: 'Awe',
-      fecha: '2020-08-05',
-      hora: '05:05',
-      sintomas: 'Son muy traviesos'
+      mascota: '',
+      dueño: '',
+      fecha: '',
+      hora: '',
+      sintomas: ''
     });
   };
 
