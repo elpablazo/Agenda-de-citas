@@ -13,6 +13,12 @@ function App() {
     ]);
   }
 
+  // Función para eliminar las citas por medio de su ID
+  const eliminarCita = (id) => {
+    const nuevasCitas = citas.filter(cita => cita.id !== id);
+    setCitas(nuevasCitas);
+  }
+
   return (
   <Fragment>
     <h1>Administrador de pacientes</h1>
@@ -24,13 +30,15 @@ function App() {
           />
         </div>
         <div className="one-half column">
-          {
-            citas.map(cita => (
-              <Citas
-                key={cita.id} 
-                cita={cita}
-              />
-            ))
+          <h1>Citas actuales</h1>
+          {citas.length == 0 ? <h1>No hay citas actualmente.</h1>
+          : citas.map(cita => (
+            <Citas
+              key={cita.id} 
+              cita={cita}
+              eliminarCita={eliminarCita}
+            />
+          ))
           }
         </div>
       </div>
